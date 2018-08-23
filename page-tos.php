@@ -5,7 +5,7 @@
 get_header();?>
 
 <!-- Projects Section -->
-<section id="projects" class="projects-section bg-light">
+
 
     <!-- Featured Project Row -->
 
