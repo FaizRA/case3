@@ -1,0 +1,53 @@
+<div class="col-xl-4 col-lg-5" style="padding-top:0px;margin-top:0px;">
+  <div id="sidebar" class="featured-text text-center text-lg-left" style="padding-top:0px;margin-top:0px;">
+    <h4>Search</h4>
+    <ul>
+      <?php get_search_form(); ?>
+    </ul>
+    <?php if ( ! dynamic_sidebar( 'sidebar' ) ) : ?>
+    <h4>Archive</h4>
+    <ul>
+
+
+      <?php wp_get_archives( 'type=monthly' ); ?>
+
+
+   </ul>
+
+   <?php endif; ?>
+   <!--
+       <h4>Recent Post</h4>
+
+        <ul>
+        <?php
+        $args = array( 'numberposts' => '5' );
+        $recent_posts = wp_get_recent_posts( $args );
+          foreach( $recent_posts as $recent ){
+            echo '<li><a href="' . get_permalink($recent["ID"]) . '">' .   $recent["post_title"].'</a> </li> ';
+          }
+          wp_reset_query();
+        ?>
+        </ul>
+      <h4>Recent Comment</h4>
+      <?php
+      $args = array (
+      'status' => 'approve',
+      'number' => '5'
+      );
+      $comments = get_comments( $args );
+      if ( !empty( $comments ) ) :
+      echo '<ul>';
+      foreach( $comments as $comment ) :
+      echo '<li><a href="' . get_permalink( $comment->comment_post_ID ) . '#comment-' . $comment->comment_ID . '">' . $comment->comment_author . ' on ' . get_the_title( $comment->comment_post_ID ) . '</a></li>';
+      endforeach;
+      echo '</ul>';
+      endif;
+       ?>
+     -->
+       <h4>ELse</h4>
+       <?php wp_list_pages('title_li='); ?>
+    </div>
+</div>
+
+</div>
+</div>
