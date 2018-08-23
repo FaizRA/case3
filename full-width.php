@@ -18,7 +18,7 @@ get_header(); ?>
             <main id="main" class="site-main" role="main">
           	<?php
             // Include the page content template.
-            get_template_part( 'page', 'tos' ); ?>
+            get_template_part( 'page' ); ?>
               </main>
             </div>
           </div>

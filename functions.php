@@ -78,7 +78,8 @@ function miblog_widgets() {
   register_nav_menus(
     array(
       'my-custom-menu' => __( 'My Custom Menu' ),
-      'extra-menu' => __( 'Extra Menu' )
+      'extra-menu' => __( 'Extra Menu' ),
+      'my-head-menu' => __( 'My Head Menu' )
     )
   );
 }

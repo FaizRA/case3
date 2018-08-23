@@ -60,10 +60,13 @@ Template Name: case3
            <h1 class="blogtitle"><a href="<?php bloginfo('url');?>"><?php bloginfo('name');?></a></h1>
            <p class="description"><?php bloginfo('description');?></p>
            <div id="menu">
-           <ul>
-           <li><a href="<?php bloginfo('url');?>">Home</a></li>
-           <?php wp_list_pages('title_li='); ?>
-           </ul>
+      
+
+           <?php
+           wp_nav_menu( array(
+               'theme_location' => 'my-head-menu' ) );
+           ?>
+           
            </div>
           </div>
         </div>
