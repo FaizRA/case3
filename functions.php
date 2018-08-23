@@ -64,8 +64,8 @@ function miblog_widgets() {
     'name' => 'sidebar',
     'id' => 'sidebar',
     'description' => 'Sidebar kanan',
-    'before_widget' => '<li>',
-    'after_widget' => '</li>',
+    'before_widget' => '',
+    'after_widget' => '',
     'before_title' => '<h3 class="widget-title">',
     'after_title' => '</h3>',
   ) );
