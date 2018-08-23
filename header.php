@@ -26,6 +26,7 @@ Template Name: case3
      </head>
 
      <body id="page-top">
+       <?php if ( is_front_page() ) :	?>
        <header class="masthead">
          <div class="container d-flex h-100 align-items-center">
            <div class="mx-auto text-center">
@@ -48,6 +49,25 @@ Template Name: case3
            <img src="img/ipad.png" class="img-fluid" alt="">
          </div>
        </section>
+     <?php else :	?>
+       <div class="container">
+         <div class="row">
+         <div class="col-xl-12 col-lg-12">
+       <div id="header">
+           <h1 class="blogtitle">MY BLOG</h1>
+           <p class="description">A WordPress Blog with Bootstrap</p>
+           <div id="menu">
+           <ul>
+           <li><a href="<?php bloginfo('url');?>">Home</a></li>
+           <?php wp_list_pages('title_li='); ?>
+           </ul>
+           </div>
+          </div>
+        </div>
+        </div>
+        </div>
+
+     <?php endif;?>
 
 
 <!--
