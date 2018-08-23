@@ -28,6 +28,10 @@ get_header();?>
         <?php comments_template(); ?>
         <hr>
         <?php endwhile;?>
+      <?php else : ?>
+        <br>
+        <br>
+        <h4>Tidak Ditemukan</h1>
 <?php endif;?>
 
       </div>
