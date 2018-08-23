@@ -1,4 +1,6 @@
 <!-- Contact Section -->
+</section>
+
 <section class="contact-section bg-black">
   <div class="container">
 
