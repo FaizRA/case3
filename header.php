@@ -57,7 +57,7 @@ Template Name: case3
          <div class="row">
          <div class="col-xl-12 col-lg-12">
        <div id="header">
-           <h1 class="blogtitle"><?php bloginfo('name');?></h1>
+           <h1 class="blogtitle"><a href="<?php bloginfo('url');?>"><?php bloginfo('name');?></a></h1>
            <p class="description"><?php bloginfo('description');?></p>
            <div id="menu">
            <ul>
