@@ -1,5 +1,15 @@
 <div class="col-xl-4 col-lg-5" style="padding-top:0px;margin-top:0px;">
   <div id="sidebar" class="featured-text text-center text-lg-left" style="padding-top:0px;margin-top:0px;">
+    <h4>Menu [[PR]]</h4>
+    <?php
+    wp_nav_menu( array(
+        'theme_location' => 'my-custom-menu' ) );
+    ?>
+<h4>Menu2 [[PR]]</h4>
+<?php
+wp_nav_menu( array(
+    'theme_location' => 'extra-menu' ) );
+?>
     <h4>Search</h4>
     <ul>
       <?php get_search_form(); ?>
@@ -51,3 +61,4 @@
 
 </div>
 </div>
+</section>

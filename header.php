@@ -8,18 +8,21 @@ Template Name: case3
    <html lang="en">
 
    <head>
-
-	  <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
 	  <title>
 		 <?php
 			wp_title( '|', true, 'right' );
 		  bloginfo( 'name' );
 		 ?>
 		 </title>
-		 <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
-		 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
-		 <?php if ( is_singular() && get_option( 'thread_comments' ) )
-		wp_enqueue_script( 'comment-reply' );
+  <meta charset="<?php bloginfo( 'charset' ); ?>">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+	<?php if ( is_singular() && pings_open( get_queried_object() ) ) : ?>
+	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
+	<?php endif; ?>
+
+	<?php
+
 		wp_head();
 		 ?>
     <!--[if (gte IE 9)|!(IE)]><!-->
@@ -30,8 +33,8 @@ Template Name: case3
        <header class="masthead">
          <div class="container d-flex h-100 align-items-center">
            <div class="mx-auto text-center">
-             <h1 class="mx-auto my-0 text-uppercase"><a href="<?php bloginfo('url');?>">My Blog</a></h1>
-             <h2 class="text-white-50 mx-auto mt-2 mb-5">A Simple extraordinary Blog.</h2>
+             <h1 class="mx-auto my-0 text-uppercase"><a href="<?php bloginfo('url');?>"><?php bloginfo('name');?></a></h1>
+             <h2 class="text-white-50 mx-auto mt-2 mb-5">A Simple Extraordinary Blog.</h2>
              <a href="#projects" class="btn btn-primary js-scroll-trigger">Get Started</a>
            </div>
          </div>
@@ -54,8 +57,8 @@ Template Name: case3
          <div class="row">
          <div class="col-xl-12 col-lg-12">
        <div id="header">
-           <h1 class="blogtitle">MY BLOG</h1>
-           <p class="description">A WordPress Blog with Bootstrap</p>
+           <h1 class="blogtitle"><?php bloginfo('name');?></h1>
+           <p class="description"><?php bloginfo('description');?></p>
            <div id="menu">
            <ul>
            <li><a href="<?php bloginfo('url');?>">Home</a></li>
