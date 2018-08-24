@@ -4,7 +4,23 @@ Template Name: case3
 */
 //tinggal panggil
 $template_url = get_template_directory_uri();
-
+$gambar = myprefix_get_theme_option( 'select_example' );
+/*
+if ($gambar == 1) {
+  echo '/img/bg-masthead.jpg';
+}elseif ($gambar == 2) {
+  echo '/img/bg-signup.jpg';
+}else {
+  echo '/img/ipad.png';
+};
+  */
+  if ($gambar == 1) {
+    $warna ='/img/bg-masthead.jpg';
+  }elseif ($gambar == 2) {
+    $warna = '/img/bg-signup.jpg';
+  }else {
+    $warna = '/img/ipad.png';
+  };
 ?>
 
    <!DOCTYPE html>
@@ -17,6 +33,7 @@ $template_url = get_template_directory_uri();
 		  bloginfo( 'name' );
 		 ?>
 		 </title>
+
   <meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
@@ -71,7 +88,7 @@ $template_url = get_template_directory_uri();
              <div class="col-lg-8 mx-auto">
                <h2 class="text-white mb-4">Built with Bootstrap 4</h2>
                <p class="text-white-50">A WordPress Blog with Bootstrap</p>
-               <img class="img-fluid" src="<?php echo $template_url; ?>/img/ipad.png" width="" height="" alt="" />
+               <img class="img-fluid" src="<?php echo $template_url; ?>'/img/ipad.png'" width="" height="" alt="" />
              </div>
            </div>
          </div>
@@ -82,7 +99,7 @@ $template_url = get_template_directory_uri();
          <div class="row">
          <div class="col-xl-12 col-lg-12">
        <div id="header">
-         <img class="img-fluid" src="<?php echo $template_url; ?>/img/bg-masthead.jpg" style="height:50px;width:100%" alt="" />
+         <img class="img-fluid" src="<?php echo $template_url; ?><?php echo $warna; ?>" style="height:50px;width:100%" alt="" />
            <h1 class="blogtitle"><a href="<?php bloginfo('url');?>"><?php bloginfo('name');?></a></h1>
            <p class="description"><?php bloginfo('description');?></p>
            <div id="menu">
@@ -100,7 +117,6 @@ $template_url = get_template_directory_uri();
         </div>
 
      <?php endif;?>
-
 
 <!--
        <!-- Navigation --+>

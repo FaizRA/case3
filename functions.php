@@ -1,5 +1,5 @@
 <?php
-
+require_once('cusmin.php');
 function onphpid_scripts()
 {
 
@@ -8,11 +8,29 @@ function onphpid_scripts()
         get_template_directory_uri() .'/vendor/bootstrap/css/bootstrap.min.css'
     );
 
-    wp_enqueue_style(
+/*
+wp_enqueue_style(
         'onphpid-bootstrap2',
         get_template_directory_uri() .'/css/grayscale.min.css'
     );
-
+*/
+$gambar = myprefix_get_theme_option( 'select_example' );
+    if ($gambar == 1) {
+      wp_enqueue_style(
+          'onphpid-bootstrap2',
+          get_template_directory_uri() .'/css/grayscale.min.css'
+      );
+    }elseif ($gambar == 2) {
+      wp_enqueue_style(
+          'onphpid-bootstrap2',
+          get_template_directory_uri() .'/css/grayscale2.min.css'
+      );
+    }else {
+      wp_enqueue_style(
+          'onphpid-bootstrap2',
+          get_template_directory_uri() .'/css/grayscale3.min.css'
+      );
+    };
     wp_enqueue_style(
         'onphpid-bootstrap3',
         get_template_directory_uri() .'/vendor/fontawesome-free/css/all.min.css'
