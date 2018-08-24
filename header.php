@@ -30,6 +30,27 @@ Template Name: case3
 
      <body id="page-top">
        <?php if ( is_front_page() ) :	?>
+         <!-- Navigation -->
+         <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+           <div class="container" style="margin-top:20px;">
+
+
+
+             <div class="collapse navbar-collapse" id="navbarResponsive">
+               <div id="menu">
+
+
+               <?php
+               wp_nav_menu( array(
+                   'theme_location' => 'my-head-menu' ) );
+               ?>
+
+               </div>
+             </div>
+           </div>
+         </nav>
+
+         <!-- Header -->
        <header class="masthead">
          <div class="container d-flex h-100 align-items-center">
            <div class="mx-auto text-center">
@@ -47,26 +68,27 @@ Template Name: case3
              <div class="col-lg-8 mx-auto">
                <h2 class="text-white mb-4">Built with Bootstrap 4</h2>
                <p class="text-white-50">A WordPress Blog with Bootstrap</p>
+               <img class="img-fluid" src="<?php echo get_template_directory_uri(); ?>/img/ipad.png" width="" height="" alt="" />
              </div>
            </div>
-           <img src="img/ipad.png" class="img-fluid" alt="">
          </div>
        </section>
      <?php else :	?>
-       <div class="container">
+
+       <div class="container" >
          <div class="row">
          <div class="col-xl-12 col-lg-12">
        <div id="header">
            <h1 class="blogtitle"><a href="<?php bloginfo('url');?>"><?php bloginfo('name');?></a></h1>
            <p class="description"><?php bloginfo('description');?></p>
            <div id="menu">
-      
+
 
            <?php
            wp_nav_menu( array(
                'theme_location' => 'my-head-menu' ) );
            ?>
-           
+
            </div>
           </div>
         </div>

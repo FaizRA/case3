@@ -17,12 +17,12 @@ get_header(); ?>
 
           	<?php
             // Include the page content template.
-            get_template_part( 'page', 'tos' );
+            get_template_part( 'page' );
 
             ?>
 
           </div>
-          
+
 <?php
 get_sidebar();
 get_footer();
