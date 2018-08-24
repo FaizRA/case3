@@ -1,11 +1,10 @@
 <?php
-/*
-Template Name: case3
-*/
+
 //tinggal panggil
 $template_url = get_template_directory_uri();
 $gambar = myprefix_get_theme_option( 'select_example' );
 /*
+
 if ($gambar == 1) {
   echo '/img/bg-masthead.jpg';
 }elseif ($gambar == 2) {
@@ -14,6 +13,7 @@ if ($gambar == 1) {
   echo '/img/ipad.png';
 };
   */
+
   if ($gambar == 1) {
     $warna ='/img/bg-masthead.jpg';
   }elseif ($gambar == 2) {
