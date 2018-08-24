@@ -55,7 +55,9 @@ wp_nav_menu( array(
        ?>
      -->
        <h4>ELse</h4>
+       <ul>
        <?php wp_list_pages('title_li='); ?>
+     </ul>
     </div>
 </div>
 

@@ -2,6 +2,9 @@
 /*
 Template Name: case3
 */
+
+$template_url = get_template_directory_uri();
+
 ?>
 
    <!DOCTYPE html>
@@ -68,7 +71,7 @@ Template Name: case3
              <div class="col-lg-8 mx-auto">
                <h2 class="text-white mb-4">Built with Bootstrap 4</h2>
                <p class="text-white-50">A WordPress Blog with Bootstrap</p>
-               <img class="img-fluid" src="<?php echo get_template_directory_uri(); ?>/img/ipad.png" width="" height="" alt="" />
+               <img class="img-fluid" src="<?php echo $template_url; ?>/img/ipad.png" width="" height="" alt="" />
              </div>
            </div>
          </div>
@@ -79,6 +82,7 @@ Template Name: case3
          <div class="row">
          <div class="col-xl-12 col-lg-12">
        <div id="header">
+         <img class="img-fluid" src="<?php echo $template_url; ?>/img/bg-masthead.jpg" style="height:50px;width:100%" alt="" />
            <h1 class="blogtitle"><a href="<?php bloginfo('url');?>"><?php bloginfo('name');?></a></h1>
            <p class="description"><?php bloginfo('description');?></p>
            <div id="menu">
