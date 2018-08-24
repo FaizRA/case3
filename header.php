@@ -2,7 +2,7 @@
 /*
 Template Name: case3
 */
-
+//tinggal panggil
 $template_url = get_template_directory_uri();
 
 ?>

@@ -84,9 +84,10 @@ function miblog_widgets() {
   );
 }
 add_action( 'init', 'wpb_custom_new_menu' );
-
+/*ALternate
 function img()
 {
     return get_template_directory_uri().'/img/';
 }
+*/
 ?>
