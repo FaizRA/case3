@@ -5,8 +5,9 @@
     <?php
     //cari kategori
     $category_id = get_cat_ID('Bukan Saya');
-    $q = 'cat=' . $category_id;
-    query_posts($q);
+  //  $q = 'cat=' . $category_id;
+    $args = array('posts_per_page' => 5, 'cat' => $category_id );
+    query_posts($args);
     if ( have_posts() ) : ?>
     <ul>
     <?php while ( have_posts() ) : the_post(); ?>
