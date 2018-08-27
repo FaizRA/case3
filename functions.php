@@ -113,10 +113,47 @@ if( function_exists('acf_add_options_page') ) {
   acf_add_options_page(array(
   'page_title' 	=> 'Theme General Settings',
   'menu_title'	=> 'Theme Option',
+  'menu_slug' 	=> 'theme-general-settings2',
+  'capability'	=> 'edit_posts',
+  'redirect'		=> false
+));
+
+  acf_add_options_page(array(
+  'page_title' 	=> 'Theme Settings',
+  'menu_title'	=> 'Theme Settings',
   'menu_slug' 	=> 'theme-general-settings',
   'capability'	=> 'edit_posts',
   'redirect'		=> false
 ));
 
+acf_add_options_sub_page(array(
+  'page_title'  => 'Theme Header Settings',
+  'menu_title'  => 'Header',
+  'parent_slug' => 'theme-general-settings',
+));
+
+acf_add_options_sub_page(array(
+  'page_title'  => 'Theme Footer Settings',
+  'menu_title'  => 'Footer',
+  'parent_slug' => 'theme-general-settings',
+));
 }
+
+function codex_custom_init() {
+    $args = array(
+      'public' => true,
+      'label'  => 'Mobil'
+    );
+
+    register_post_type( 'mobil', $args );
+    $args = array(
+      'public' => true,
+      'label'  => 'Brand'
+    );
+    register_post_type( 'brand', $args );
+}
+add_action( 'init', 'codex_custom_init' );
+
+
+
 ?>
