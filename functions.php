@@ -113,11 +113,11 @@ if( function_exists('acf_add_options_page') ) {
   acf_add_options_page(array(
   'page_title' 	=> 'Theme General Settings',
   'menu_title'	=> 'Theme Option',
-  'menu_slug' 	=> 'theme-general-settings2',
+  'menu_slug' 	=> 'theme-general-settings',
   'capability'	=> 'edit_posts',
   'redirect'		=> false
 ));
-
+/*
   acf_add_options_page(array(
   'page_title' 	=> 'Theme Settings',
   'menu_title'	=> 'Theme Settings',
@@ -137,6 +137,7 @@ acf_add_options_sub_page(array(
   'menu_title'  => 'Footer',
   'parent_slug' => 'theme-general-settings',
 ));
+*/
 }
 
 function codex_custom_init() {
