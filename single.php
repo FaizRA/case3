@@ -25,6 +25,9 @@ get_header();?>
               the_content();
             ?>
           </p>
+          <?php if( get_field('reference') ): ?>
+              <h6><b><?php the_field('reference'); ?></b></h2>
+          <?php endif; ?>
             <br><br>
             <h4>
             <

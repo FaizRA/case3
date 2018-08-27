@@ -1,4 +1,5 @@
 
+
             <?php
 // Start the loop.
             while ( have_posts() ) : the_post();
@@ -23,5 +24,3 @@
 
               	endwhile;
             ?>
-
-            

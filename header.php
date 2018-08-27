@@ -21,6 +21,7 @@ if ($gambar == 1) {
   }else {
     $warna = '/img/ipad.png';
   };
+  $image = get_field('thepic', 'option');
 ?>
 
    <!DOCTYPE html>
@@ -88,7 +89,14 @@ if ($gambar == 1) {
              <div class="col-lg-8 mx-auto">
                <h2 class="text-white mb-4">Built with Bootstrap 4</h2>
                <p class="text-white-50">A WordPress Blog with Bootstrap</p>
-               <img class="img-fluid" src="<?php echo $template_url; ?>'/img/ipad.png'" width="" height="" alt="" />
+
+               <?php
+
+       if( !empty($image) ): ?>
+
+        <img class="img-fluid" src="<?php echo $image['url']; ?>"  style="width: 100%;max-height:300px "  alt="<?php echo $image['alt']; ?>" />
+
+       <?php endif; ?>
              </div>
            </div>
          </div>
@@ -99,7 +107,10 @@ if ($gambar == 1) {
          <div class="row">
          <div class="col-xl-12 col-lg-12">
        <div id="header">
+
+ <!--
          <img class="img-fluid" src="<?php echo $template_url; ?><?php echo $warna; ?>" style="height:50px;width:100%" alt="" />
+       -->
            <h1 class="blogtitle"><a href="<?php bloginfo('url');?>"><?php bloginfo('name');?></a></h1>
            <p class="description"><?php bloginfo('description');?></p>
            <div id="menu">
@@ -111,6 +122,13 @@ if ($gambar == 1) {
            ?>
 
            </div>
+           <?php
+
+   if( !empty($image) ): ?>
+
+    <img class="img-fluid" src="<?php echo $image['url']; ?>" style="height:150px;width:100%" alt="<?php echo $image['alt']; ?>" />
+
+   <?php endif; ?>
           </div>
         </div>
         </div>
