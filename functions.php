@@ -159,9 +159,19 @@ function codex_custom_init() {
       'label'  => 'Grayscale'
     );
     register_post_type( 'grayscale', $args );
+
+    $args = array(
+      'public' => true,
+      'label'  => 'Iterinary',
+      'supports'           => array( 'title','thumbnail','editor','comments')
+
+
+
+    );
+    register_post_type( 'iterinary', $args );
 }
 add_action( 'init', 'codex_custom_init' );
-
+add_theme_support( 'post-thumbnails' );
 //jsonsync kalo pgn custon location
 add_filter('acf/settings/save_json', 'my_acf_json_save_point');
 

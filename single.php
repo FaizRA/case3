@@ -16,6 +16,11 @@ get_header();?>
 // Start the loop.
             while ( have_posts() ) : the_post();
             ?>
+            <?php
+if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
+the_post_thumbnail( 'medium' );
+}
+?>
           <h1><?php
             the_title();
           ?></h1>
@@ -26,7 +31,17 @@ get_header();?>
             ?>
           </p>
 
+          <?php
+          //masih gagal
+          $file = 'file_upload';
+          if( get_field($file) ): ?>
 
+        	<a href="<?php echo $file['url']; ?>" >Download File</a>
+
+        <?php endif; ?>
+
+
+        
           <?php
             // check if the repeater field has rows of data
             $art = 'art_set';
