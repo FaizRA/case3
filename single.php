@@ -25,9 +25,42 @@ get_header();?>
               the_content();
             ?>
           </p>
-          <?php if( get_field('reference') ): ?>
-              <h6><b><?php the_field('reference'); ?></b></h2>
-          <?php endif; ?>
+
+
+          <?php
+            // check if the repeater field has rows of data
+            $art = 'art_set';
+            if( have_rows($art) ):
+             	// loop through the rows of data
+                while ( have_rows($art) ) : the_row();
+            $pic = get_sub_field('art_pic');
+                    // display a sub field value
+                    ?>
+                    <table>
+                      <tr>
+                        <th>Scenery</th>
+                        <th>Picture</th>
+                        <th>Description</th>
+                      </tr>
+                      <tr>
+                        <td style="width:20%;"><?php the_sub_field('art_name'); ?></td>
+                        <?php if( !empty($pic) ): ?>
+                        <td style="width:50%;"><img src="<?php echo $pic['url']; ?>"  style="width: 100%;"  alt="<?php echo $pic['alt']; ?>"/></td>
+                        <?php endif; ?>
+                        <td><?php the_sub_field('art_desc'); ?></td>
+
+                        <?php
+                endwhile;
+            else :
+                // no rows found
+            endif;
+          ?>
+</tr>
+</table>
+<?php if( get_field('reference') ): ?>
+    <h6><b><?php the_field('reference'); ?></b></h2>
+<?php endif; ?>
+
             <br><br>
             <h4>
             <

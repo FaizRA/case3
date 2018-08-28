@@ -141,17 +141,24 @@ acf_add_options_sub_page(array(
 }
 
 function codex_custom_init() {
+/*
     $args = array(
       'public' => true,
       'label'  => 'Mobil'
     );
-
     register_post_type( 'mobil', $args );
+
     $args = array(
       'public' => true,
       'label'  => 'Brand'
     );
     register_post_type( 'brand', $args );
+*/
+    $args = array(
+      'public' => true,
+      'label'  => 'Grayscale'
+    );
+    register_post_type( 'grayscale', $args );
 }
 add_action( 'init', 'codex_custom_init' );
 
